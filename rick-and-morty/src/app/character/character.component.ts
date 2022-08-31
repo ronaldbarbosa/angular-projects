@@ -8,4 +8,8 @@ import { CharacterResponse } from '../models/characterResponse';
 })
 export class CharacterComponent {
   @Input() res?: CharacterResponse;
+
+  updateList(res: CharacterResponse) {
+    this.res = res;
+  }
 }

@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CharacterComponent } from './character/character.component';
 import { CharacterService } from './services/character-service.service';
+import { PaginationComponent } from './pagination/pagination.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharacterComponent
+    CharacterComponent,
+    PaginationComponent
 ],
   imports: [
     BrowserModule,

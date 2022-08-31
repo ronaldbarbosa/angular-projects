@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <a class="navbar-brand text-light">Rick and Morty API</a>
     <div class="d-flex" role="search" >
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" #input>
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (keydown.enter)="search(input)" #input>
       <button class="btn btn-success" type="submit" (click)="search(input)">Search</button>
     </div>
   </div>

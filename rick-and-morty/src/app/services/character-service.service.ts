@@ -13,4 +13,7 @@ export class CharacterService {
   getCharacter(value: string): Observable<CharacterResponse> {
     return this.httpClient.get<CharacterResponse>(`${this.API}${value}`);
   }
+  getPage(url: string): Observable<CharacterResponse> {
+    return this.httpClient.get<CharacterResponse>(url);
+  }
 }

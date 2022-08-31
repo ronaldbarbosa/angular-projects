@@ -25,5 +25,7 @@ export class AppComponent {
     }));
     input.value = '';
   }
-
+  teste() {
+    alert('oi')
+  }
 }
