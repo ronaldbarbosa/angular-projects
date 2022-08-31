@@ -7,12 +7,14 @@ import { AppComponent } from './app.component';
 import { CharacterComponent } from './character/character.component';
 import { CharacterService } from './services/character-service.service';
 import { PaginationComponent } from './pagination/pagination.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterComponent,
-    PaginationComponent
+    PaginationComponent,
+    FooterComponent
 ],
   imports: [
     BrowserModule,
