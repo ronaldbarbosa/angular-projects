@@ -2,8 +2,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { CharacterService } from './services/character-service.service';
 import { CharacterResponse } from './models/characterResponse';
 
-
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +9,7 @@ import { CharacterResponse } from './models/characterResponse';
 })
 export class AppComponent {
   response!: CharacterResponse;
+  alert = false;
 
   constructor(public caracterService: CharacterService) {
   }
@@ -19,13 +18,11 @@ export class AppComponent {
     if(input.value === '') alert('Campo de entrada vazio');
     else(this.caracterService.getCharacter(input.value)?.subscribe(
       r => {
-      this.response = r
+      this.response = r;
+      this.alert = false;
     }, err => {
-      alert('Not found')
+      this.alert = true;
     }));
     input.value = '';
-  }
-  teste() {
-    alert('oi')
   }
 }

@@ -8,13 +8,15 @@ import { CharacterComponent } from './character/character.component';
 import { CharacterService } from './services/character-service.service';
 import { PaginationComponent } from './pagination/pagination.component';
 import { FooterComponent } from './footer/footer.component';
+import { AlertComponent } from './alert/alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CharacterComponent,
     PaginationComponent,
-    FooterComponent
+    FooterComponent,
+    AlertComponent
 ],
   imports: [
     BrowserModule,
