@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { CharacterService } from './services/character-service.service';
 import { CharacterResponse } from './models/characterResponse';
 
@@ -9,20 +9,27 @@ import { CharacterResponse } from './models/characterResponse';
 })
 export class AppComponent {
   response!: CharacterResponse;
-  alert = false;
+  alertNotFound = false;
+  alertEmptyField = false;
 
-  constructor(public caracterService: CharacterService) {
-  }
+  constructor(public caracterService: CharacterService) { }
 
   search(input: HTMLInputElement) {
-    if(input.value === '') alert('Campo de entrada vazio');
-    else(this.caracterService.getCharacter(input.value)?.subscribe(
-      r => {
-      this.response = r;
-      this.alert = false;
-    }, err => {
-      this.alert = true;
-    }));
+    if(input.value === '') {
+      this.alertEmptyField = true;
+      this.alertNotFound = false;
+    }
+    else {
+      this.alertEmptyField = false;
+      this.caracterService.getCharacter(input.value)?.subscribe(
+        r => {
+          this.response = r;
+          this.alertNotFound = false;
+          this.alertEmptyField = false;
+        }, err => {
+          this.alertNotFound = true;
+      })
+    }
     input.value = '';
   }
 }

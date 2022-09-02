@@ -1,6 +1,6 @@
 <nav class="navbar bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand text-light">Rick and Morty API</a>
+    <a class="navbar-brand text-light title">Rick and Morty API</a>
     <div class="d-flex" role="search" >
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" (keydown.enter)="search(input)" #input>
       <button class="btn btn-success" type="submit" (click)="search(input)">Search</button>
@@ -8,7 +8,7 @@
   </div>
 </nav>
 
-<app-alert [alert]="alert"></app-alert>
+<app-alert [alertNotFound]="alertNotFound" [alertEmptyField]="alertEmptyField"></app-alert>
 
 <app-character [res]="response"></app-character>
 

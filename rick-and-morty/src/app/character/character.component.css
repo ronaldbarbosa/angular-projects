@@ -1,0 +1,43 @@
+#to-top {
+    cursor: pointer;
+    display: block;
+    position: absolute;
+    margin-left: 90%;
+    margin-top: -100px;
+}
+
+@media (max-width: 1000px) {
+    #to-top {
+        margin-left: 85%;
+        margin-top: -60px;
+    }
+}
+
+@media (max-width: 500px) {
+    .card {
+        width: 340px;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    .col-md-4 {
+        text-align: center;
+    }
+
+    .img-fluid {
+        margin-top: 15px;
+        border-radius: 5px;
+    }
+
+    /* .container {
+        background-color: aqua;
+        width: 100%;
+    } */
+
+    #to-top {
+        margin-left: 80%;
+        margin-top: -50px;
+    }
+}

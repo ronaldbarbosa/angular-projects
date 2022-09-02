@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CharacterResponse } from '../models/characterResponse';
 import { CharacterService } from '../services/character-service.service';
 
@@ -7,14 +7,11 @@ import { CharacterService } from '../services/character-service.service';
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.css']
 })
-export class PaginationComponent implements OnInit {
+export class PaginationComponent {
   @Input() response?: CharacterResponse;
   @Output() newResponse = new EventEmitter();
 
   constructor(public service: CharacterService) { }
-
-  ngOnInit(): void {
-  }
 
   previousPage(): void {
     this.scrollToTop();

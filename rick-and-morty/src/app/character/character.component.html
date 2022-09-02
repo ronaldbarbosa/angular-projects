@@ -7,25 +7,29 @@
   </div>
 </div>
 <div *ngFor="let character of res?.results">
-    <div class="card mb-3 m-auto my-3 bg-light bg-gradient" style="max-width: 540px;">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src='{{ character.image }}' class="img-fluid rounded-start" alt="...">
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title"> {{ character.name }} </h5>
-              <p>
-                <img src="../../assets/green_circle.png" *ngIf="character.status === 'Alive'">
-                <img src="../../assets/red_circle.png" *ngIf="character.status === 'Dead'">
-                <img src="../../assets/grey-circle.png" *ngIf="character.status == 'unknown'"> 
-                {{ character.status }} - {{ character.species }} 
-              </p>
-              <p class="card-text"><span class="text-secondary">Last known location:</span> <br> {{ character.location.name }} </p>
-            </div>
-          </div>
+  <div class="card mb-3 m-auto my-3 bg-light bg-gradient" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src='{{ character.image }}' class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"> {{ character.name }} </h5>
+          <p>
+            <img src="../../assets/green_circle.png" *ngIf="character.status === 'Alive'">
+            <img src="../../assets/red_circle.png" *ngIf="character.status === 'Dead'">
+            <img src="../../assets/grey-circle.png" *ngIf="character.status == 'unknown'">
+            {{ character.status }} - {{ character.species }}
+          </p>
+          <p class="card-text"><span class="text-secondary">Last known location:</span> <br> {{ character.location.name
+            }} </p>
         </div>
       </div>
+    </div>
+  </div>
 </div>
+
+<img id="to-top" src="../../assets/up-arrow.png" *ngIf="res" (click)="toTop()">
+
 
 <app-pagination [response]="res" (newResponse)="updateList($event)"></app-pagination>

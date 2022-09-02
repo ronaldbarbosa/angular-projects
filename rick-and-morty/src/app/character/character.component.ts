@@ -12,4 +12,8 @@ export class CharacterComponent {
   updateList(res: CharacterResponse) {
     this.res = res;
   }
+
+  toTop(): void {
+    window.scrollTo(0, 0);
+  }
 }

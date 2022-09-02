@@ -1,19 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-alert',
   templateUrl: './alert.component.html',
   styleUrls: ['./alert.component.css']
 })
-export class AlertComponent implements OnInit {
-  @Input() alert!: boolean;
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-  changeAlertState(state: boolean): void {
-    
-  }
+export class AlertComponent {
+  @Input() alertNotFound!: boolean;
+  @Input() alertEmptyField!: boolean;
 }
